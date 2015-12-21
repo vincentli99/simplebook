@@ -1,0 +1,18 @@
+<%= link_to 'Create Gua', new_gua_path, class:'btn btn-primary' %>
+<hr>
+<div class="container">
+    <% @guas.each do |gua| %>
+        <div class="row">
+            <div class="col-md-4">
+                第<%= gua.serial %>卦 - <%= gua.name %>
+            </div>
+            <div class="col-md-4">
+                <%= gua.gtext %>
+            </div>
+            <div class="col-md-4">
+                kk
+            </div>
+        </div>
+        <hr>
+    <% end %>
+</div>

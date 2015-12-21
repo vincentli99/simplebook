@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>易經啦</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>易經就是好！</h1>
+    </div>
+  </div>
+  <%= render 'layouts/messages' %>
+
+  <div class="container">
+    <div class="row">
+        <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>
