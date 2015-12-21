@@ -4,13 +4,18 @@
     <% @guas.each do |gua| %>
         <div class="row">
             <div class="col-md-4">
-                第<%= gua.serial %>卦 - <%= gua.name %>
+                第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %>
             </div>
             <div class="col-md-4">
                 <%= gua.gtext %>
             </div>
             <div class="col-md-4">
-                kk
+                <%= link_to edit_gua_path(gua), class:'btn btn-default' do %>
+                  <i class='glyphicon glyphicon-pencil'></i> Edit
+                <% end %>
+                <%= link_to gua, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
+                    <i class='glyphicon glyphicon-trash'></i> Delete
+                <% end %>
             </div>
         </div>
         <hr>

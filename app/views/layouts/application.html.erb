@@ -9,7 +9,7 @@
 <body>
   <div class="jumbotron">
     <div class="container">
-      <h1>易經就是好！</h1>
+      <h1 class="logo"><%= link_to '易經就是好！', root_path, class: 'btn btn-primary btn-lg' %></h1>
     </div>
   </div>
   <%= render 'layouts/messages' %>
@@ -19,6 +19,8 @@
         <%= yield %>
     </div>
   </div>
+  
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>

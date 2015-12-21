@@ -1,0 +1,21 @@
+<div class="well">
+    <%= form_for(@gua) do |f| %>
+        <div class="form-group">
+            <%= f.label '卦名' %>
+            <%= f.text_field :name, class:'form-control' %>
+        </div>
+        <div class="form-group">    
+            <%= f.label '卦序' %>
+            <%= f.text_field :serial, class:'form-control' %>
+        </div>
+        <div class="form-group">
+            <%= f.label '卦辭' %>
+            <%= f.text_area :gtext, class:'form-control' %>
+        </div>
+        <div class="form-group">
+            <%= f.label '解釋' %>
+            <%= f.text_area :explain, class:'form-control' %>
+        </div>
+            <%= f.submit 'Update', class:'btn btn-primary' %>
+    <% end %>
+</div>
