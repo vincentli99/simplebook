@@ -9,3 +9,34 @@
     <h3>解釋</h3>
     <p><%= @gua.explain %></p>
 </div>
+
+<hr>
+<div class='container'>
+    
+    <% @gua.yaos.each do |yao| %>
+        <div class="row">
+            <div class="col-md-2">
+                第<%= yao.serial %>爻  <%= link_to yao.name, edit_gua_yao_path(yao.gua, yao) %>
+            </div>
+            <div class="col-md-2">
+                <%= "<i class='glyphicon glyphicon-minus'></i>".html_safe if yao.yingyang? %>
+                <%= "<i class='glyphicon glyphicon-pause'></i>".html_safe if !yao.yingyang? %>
+            </div>
+            <div class="col-md-3">
+                <%= yao.ytext %>
+            </div>
+            <div class="col-md-3">
+                <%= yao.explain %>
+            </div>
+            <div class="col-md-2">
+                <%= link_to "Delete",[yao.gua, yao], method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' %>
+            </div>
+            <hr>
+        </div>
+    <% end %>
+    
+</div>
+<br>
+<div calss="row">
+    <%= link_to 'Create Yao', new_gua_yao_path(@gua) %>    
+</div>

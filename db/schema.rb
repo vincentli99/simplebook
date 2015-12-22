@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221143552) do
+ActiveRecord::Schema.define(version: 20151222030017) do
 
   create_table "guas", force: :cascade do |t|
     t.string   "name"
@@ -21,5 +21,16 @@ ActiveRecord::Schema.define(version: 20151221143552) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "yaos", force: :cascade do |t|
+    t.string  "name"
+    t.text    "ytext"
+    t.text    "explain"
+    t.integer "serial"
+    t.integer "gua_id"
+    t.boolean "yingyang"
+  end
+
+  add_index "yaos", ["gua_id"], name: "index_yaos_on_gua_id"
 
 end
