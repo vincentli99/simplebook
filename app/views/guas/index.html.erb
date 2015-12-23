@@ -2,7 +2,7 @@
     <div class="row">
         <h1>卜卦方法</h1>
         <p>Step 1. 默想問題</p>
-        <p>Step 2. 重新整理頁面（可按F5）以進行占卜</p>
+        <p>Step 2. <button type="button" class="btn btn-primary btn-lg" id="reload">進行占卜</button></p>
         <p>Step 3. <button type="button" class="btn btn-primary btn-lg" id="tell">觀看結果</button></p>
         
     </div>
@@ -14,7 +14,7 @@
 <hr>
 
 <div class="container">
-    <p><%= link_to '新增卦', new_gua_path, class:'btn btn-primary' %></p>
+    <p><%= link_to '新增卦', new_gua_path, class:'btn btn-info' %></p>
     <hr>
     <% @guas.each do |gua| %>
         <div class="row">
@@ -47,5 +47,10 @@ $(document).ready(function(){
         $("#tellgua").show();
         
     });
+    
+    $("button#reload").click(function(){
+       location.reload(); 
+    });
+    
 });
 </script>
