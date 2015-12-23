@@ -4,6 +4,10 @@ class GuasController < ApplicationController
         @guas = Gua.order("guas.serial ASC").all
         @pluckgua = Gua.find_by(id: shuffle_gua)
         @pluckgua_name = @pluckgua.name
+        @pluckyao = Yao.find_by(id: shuffle_yao)
+        @pluckyao_name = @pluckyao.name
+        @pluckyao_ytext = @pluckyao.ytext
+        @pluckyao_gua = @pluckyao.gua
     end
     
     def new
@@ -52,7 +56,11 @@ class GuasController < ApplicationController
     end
     
     def shuffle_gua
-        
         Gua.pluck.shuffle[0][0]
     end
+    
+    def shuffle_yao
+        Yao.pluck.shuffle[0][0]
+    end
+    
 end

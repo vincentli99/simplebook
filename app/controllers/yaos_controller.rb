@@ -1,6 +1,6 @@
 class YaosController < ApplicationController
     before_action :set_gua, only: [:new, :create, :edit, :update, :destroy]
-    
+   
     def new
         @yao = Yao.new
     end
@@ -38,6 +38,7 @@ class YaosController < ApplicationController
     end
     
     def show
+        @yao = Yao.find(params[:id])
     end
     
     private
