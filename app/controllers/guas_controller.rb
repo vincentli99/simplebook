@@ -1,6 +1,9 @@
 class GuasController < ApplicationController
+    
     def index
         @guas = Gua.order("guas.serial ASC").all
+        @pluckgua = Gua.find_by(id: shuffle_gua)
+        @pluckgua_name = @pluckgua.name
     end
     
     def new
@@ -41,8 +44,15 @@ class GuasController < ApplicationController
         redirect_to guas_path
     end
     
+
+    
     private
     def gua_params
         params.require(:gua).permit(:name, :gtext, :explain, :serial)
+    end
+    
+    def shuffle_gua
+        
+        Gua.pluck.shuffle[0][0]
     end
 end

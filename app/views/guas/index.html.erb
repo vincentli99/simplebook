@@ -1,6 +1,21 @@
-<%= link_to 'Create Gua', new_gua_path, class:'btn btn-primary' %>
-<hr>
 <div class="container">
+    <div class="row">
+        <h1>卜卦方法</h1>
+        <p>Step 1. 默想問題</p>
+        <p>Step 2. 重新整理頁面（可按F5）以進行占卜</p>
+        <p>Step 3. <button type="button" class="btn btn-primary btn-lg" id="tell">觀看結果</button></p>
+        
+    </div>
+    <div class="row" id="tellgua">
+    結果：<%= link_to @pluckgua_name, gua_path(@pluckgua) %>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <p><%= link_to '新增卦', new_gua_path, class:'btn btn-primary' %></p>
+    <hr>
     <% @guas.each do |gua| %>
         <div class="row">
             <div class="col-md-4">
@@ -11,13 +26,26 @@
             </div>
             <div class="col-md-4">
                 <%= link_to edit_gua_path(gua), class:'btn btn-default' do %>
-                  <i class='glyphicon glyphicon-pencil'></i> Edit
+                  <i class='glyphicon glyphicon-pencil'></i>
                 <% end %>
                 <%= link_to gua, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
-                    <i class='glyphicon glyphicon-trash'></i> Delete
+                    <i class='glyphicon glyphicon-trash'></i>
                 <% end %>
             </div>
         </div>
         <hr>
     <% end %>
 </div>
+
+
+
+<script>
+$(document).ready(function(){
+
+    $("button#tell").click(function(){
+        
+        $("#tellgua").show();
+        
+    });
+});
+</script>
