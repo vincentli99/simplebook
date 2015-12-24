@@ -1,13 +1,27 @@
 <div class="container">
     <div class="row">
-        <h1>卜卦方法</h1>
-        <p>Step 1. 默想問題</p>
-        <p>Step 2. <button type="button" class="btn btn-primary btn-lg" id="reload">進行占卜</button></p>
-        <p>Step 3. <button type="button" class="btn btn-primary btn-lg" id="tell">觀看結果</button></p>
+        <h1>想卜卦嗎？</h1>
+        <br>
+        <div class="col-md-12">
+        Step 1. <button type="button" class="btn btn-primary btn-lg" id="reload">默想問題</button>
+        <br>
+        </div>
+        <br>
+        <div class="col-md-12" id="step2" >
+        Step 2. <button type="button" class="btn btn-primary btn-lg" id="tell">觀看結果</button>
+        </div>
+        <br>
         
     </div>
-    <div class="row" id="tellgua">
-    結果：<%= link_to @pluckyao_name +' '+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %>
+    <br>
+    <div id="tellgua" >
+        <div class="well" id="guacontent">
+        <h1>卜卦結果</h1>
+        <h3>卦/爻辭：</h3>
+        <p><%= link_to @pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
+        <h3>解釋：</h3>
+        <p><%= @pluckyao_explain %></p>
+        </div>
     </div>
 </div>
 
@@ -15,11 +29,11 @@
 
 <div class="container">
     <p><%= link_to '新增卦', new_gua_path, class:'btn btn-info' %></p>
-    <hr>
+    <br>
     <% @guas.each do |gua| %>
         <div class="row">
             <div class="col-md-4">
-                第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %>
+                第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
             </div>
             <div class="col-md-4">
                 <%= gua.gtext %>
@@ -38,19 +52,23 @@
 </div>
 
 
-
 <script>
 $(document).ready(function(){
-
+   
     $("button#tell").click(function(){
         
-        $("#tellgua").show();
+        /*$("#tellgua").show();*/
+     
+        $("#tellgua").slideDown();
+        /*$(window).scrollTop($(window).scrollTop()-10);*/
         
     });
     
     $("button#reload").click(function(){
        location.reload(); 
     });
-    
 });
+</script>
+<script>
+     new WOW().init();
 </script>

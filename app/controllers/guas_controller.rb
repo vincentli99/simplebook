@@ -8,6 +8,7 @@ class GuasController < ApplicationController
         @pluckyao_name = @pluckyao.name
         @pluckyao_ytext = @pluckyao.ytext
         @pluckyao_gua = @pluckyao.gua
+        @pluckyao_explain = @pluckyao.explain
     end
     
     def new

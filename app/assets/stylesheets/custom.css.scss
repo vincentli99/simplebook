@@ -1,25 +1,75 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.jumbotron {
-    padding-top:5px;
-    padding-bottom:5px;
-    background-color:#bfbfbf;
+html, body{
+    margin:0px;
+    padding:0px;
 }
 
 
+.jumbotron {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin:0px;
+    height: 300px;
+    width:100%;
+    left: 0;
+    right: 0;
+    background: url('prague-astronomical-clock.jpg') no-repeat;
+    
+    
+    .logo {
+        background-color:rgba(0, 0, 0, 0.6);
+        text-align: center;
+        margin-top: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        font-size: 1.5em;
+        width: 100%;
+        a {
+            color: white ;
+            text-decoration: none;
+        }
+    }
+} 
+
+
+.layer {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin:0px;
+}
+
 footer {
-    margin-top:30px;
-    margin-bottom:0;
-    padding-top:30px;
-    padding-bottom:30px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
     background-color: #404040;
-    color:white;
+    color: white;
 }
 
 #tellgua{
-    display:none;
+    display: none;
 }
 
 
+.glyphicon.glyphicon-minus.fa-2x{
+    font-size:22px;
+}
+
+.btn{
+    margin-bottom:10px;
+}
+
+.warn{
+    color:orange;
+}

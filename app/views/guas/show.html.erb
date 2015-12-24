@@ -19,8 +19,8 @@
                 第<%= yao.serial %>爻  <%= link_to yao.name, gua_yao_path(yao.gua, yao) %>
             </div>
             <div class="col-md-2">
-                <%= "<i class='glyphicon glyphicon-minus'></i>".html_safe if yao.yingyang? %>
-                <%= "<i class='glyphicon glyphicon-pause'></i>".html_safe if !yao.yingyang? %>
+                <%= "<i class='glyphicon glyphicon-minus fa-2x'></i>".html_safe if yao.yingyang? %>
+                <%= "<i class='glyphicon glyphicon-minus'></i><i class='glyphicon glyphicon-minus'></i>".html_safe if !yao.yingyang? %>
             </div>
             <div class="col-md-3" >
                 <%= simple_format(yao.ytext) %>
