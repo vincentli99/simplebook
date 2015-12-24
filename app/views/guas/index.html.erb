@@ -1,35 +1,10 @@
 <div class="container">
     <div class="row">
-        <h1>想卜卦嗎？</h1>
-        <br>
         <div class="col-md-12">
-        Step 1. <button type="button" class="btn btn-primary btn-lg" id="reload">默想問題</button>
-        <br>
-        </div>
-        <br>
-        <div class="col-md-12" id="step2" >
-        Step 2. <button type="button" class="btn btn-primary btn-lg" id="tell">觀看結果</button>
-        </div>
-        <br>
-        
-    </div>
-    <br>
-    <div id="tellgua" >
-        <div class="well" id="guacontent">
-        <h1>卜卦結果</h1>
-        <h3>卦/爻辭：</h3>
-        <p><%= link_to @pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
-        <h3>解釋：</h3>
-        <p><%= @pluckyao_explain %></p>
+    <p><%= link_to '新增卦', new_gua_path, class:'btn btn-primary' %></p>
         </div>
     </div>
-</div>
-
-<hr>
-
-<div class="container">
-    <p><%= link_to '新增卦', new_gua_path, class:'btn btn-info' %></p>
-    <br>
+    
     <% @guas.each do |gua| %>
         <div class="row">
             <div class="col-md-4">
@@ -52,23 +27,3 @@
 </div>
 
 
-<script>
-$(document).ready(function(){
-   
-    $("button#tell").click(function(){
-        
-        /*$("#tellgua").show();*/
-     
-        $("#tellgua").slideDown();
-        /*$(window).scrollTop($(window).scrollTop()-10);*/
-        
-    });
-    
-    $("button#reload").click(function(){
-       location.reload(); 
-    });
-});
-</script>
-<script>
-     new WOW().init();
-</script>

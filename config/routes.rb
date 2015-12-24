@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'guas#index'
+  root 'guas#home'
+  get 'guas/home', to: 'guas#home'
   resources :guas do
     resources :yaos
   end

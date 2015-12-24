@@ -1,11 +1,19 @@
 <div class="row">
+    <% if @yao.serial > 0 %>
     <h1>第<%= @yao.serial %>爻  <%= @yao.name %></h1>
+    <% else %>
+    <h1>卦名： <%= @yao.name %></h1>
+    <% end %>
 </div>
 
 <div class="well">
+    <% if @yao.serial > 0 %>
     <h3>爻辭</h3>
-    <p><%= @yao.ytext %></p>
+    <% else %>
+    <h3>卦辭</h3>
+    <% end %>
+    <p><%= simple_format(@yao.ytext) %></p>
     <hr>
     <h3>解釋</h3>
-    <p><%= @yao.explain %></p>
+    <p><%= simple_format(@yao.explain) %></p>
 </div>

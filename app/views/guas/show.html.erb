@@ -13,19 +13,24 @@
 <hr>
 <div class='container'>
     
-    <% @gua.yaos.each do |yao| %>
+    <%  @gua_yaos.each do |yao| %>
         <div class="row">
             <div class="col-md-2">
+                <% if yao.serial > 0 %>
                 第<%= yao.serial %>爻  <%= link_to yao.name, gua_yao_path(yao.gua, yao) %>
+                <% else %>
+                卦名  <%= link_to yao.name, gua_yao_path(yao.gua, yao) %>
+                <% end %>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <%= "<i class='glyphicon glyphicon-minus fa-2x'></i>".html_safe if yao.yingyang? %>
-                <%= "<i class='glyphicon glyphicon-minus'></i><i class='glyphicon glyphicon-minus'></i>".html_safe if !yao.yingyang? %>
+                <%= "<i class='glyphicon glyphicon-minus'></i><i class='glyphicon glyphicon-minus'></i>".html_safe if yao.yingyang == false %>
+                <%= " ".html_safe if yao.yingyang == nil %>
             </div>
             <div class="col-md-3" >
                 <%= simple_format(yao.ytext) %>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <%= simple_format(yao.explain) %>
             </div>
             <div class="col-md-2">

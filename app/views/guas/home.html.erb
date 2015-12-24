@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row text-center">
+        <h1>想卜卦嗎？</h1>
+        <br>
+        <div class="col-md-12">
+        <button type="button" class="btn btn-primary btn-lg gold" id="reload">Step 1. 默想問題</button>
+        
+        </div>
+        <div class="col-md-12">
+        <button type="button" class="btn btn-primary btn-lg gold" id="tell">Step 2. 觀看結果</button>
+        </div>
+        <br>
+        
+    </div>
+    <br>
+    <div id="tellgua" >
+        <div class="well" id="guacontent">
+        <h1>卜卦結果</h1>
+        <h3>卦/爻辭：</h3>
+        <% if @pluckyao.serial > 0 %>
+        <p><%= link_to @pluckyao_gua.name+@pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
+        <% else %>
+        <p><%= link_to @pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
+        <% end %>
+        <h3>解釋：</h3>
+        <p><%= @pluckyao_explain %></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+   
+    $("button#tell").click(function(){
+        
+        /*$("#tellgua").show();*/
+     
+        $("#tellgua").slideDown();
+        /*$(window).scrollTop($(window).scrollTop()-10);*/
+        
+    });
+    
+    $("button#reload").click(function(){
+       location.reload(); 
+    });
+});
+</script>

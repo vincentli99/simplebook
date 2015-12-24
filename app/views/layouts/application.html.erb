@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>易經啦</title>
+  <title>易經占卜</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="jumbotron">
-    <div class="container layer">
-      <div class="logo">
-        <%= link_to '易經占卜', root_path, class: 'align-center' %>
-      </div>
-    </div>
-  </div>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/nav' %>
   <%= render 'layouts/messages' %>
 
   <div class="container">

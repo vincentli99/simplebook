@@ -10,11 +10,11 @@
         </div>
         <div class="form-group">
             <%= f.label '卦辭' %>
-            <%= f.text_area :gtext, class:'form-control' %>
+            <%= f.text_area :gtext, class:'form-control', rows: 5 %>
         </div>
         <div class="form-group">
             <%= f.label '解釋' %>
-            <%= f.text_area :explain, class:'form-control' %>
+            <%= f.text_area :explain, class:'form-control', rows: 5 %>
         </div>
             <%= f.submit 'Update', class:'btn btn-primary' %>
     <% end %>
