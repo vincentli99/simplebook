@@ -37,7 +37,9 @@ $(document).ready(function(){
      
         $("#tellgua").slideDown();
         /*$(window).scrollTop($(window).scrollTop()-10);*/
-        
+        $('html, body').animate({
+            scrollTop: $("#tellgua").offset().top
+        }, 800);
     });
     
     $("button#reload").click(function(){

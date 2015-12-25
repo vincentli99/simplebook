@@ -2,12 +2,15 @@
 @import "bootstrap";
 
 html, body{
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    overflow-x: hidden;
 }
 
-nav {
- 
+a:link {
+    text-decoration: none;
 }
 
 p {
@@ -60,6 +63,9 @@ p {
 .navbar{
     border-radius: 0;
     padding-top:4px;
+    a {
+        color: #D4AF37;
+    }
 }
 
 footer {
@@ -92,4 +98,26 @@ footer {
 .gold{
     background-color: #D4AF37;
     border: none;
+}
+
+button.gold:hover{
+    background-color: #996515;
+}
+
+button.gold:active{
+    background-color: #996515;
+}
+
+button.gold:target{
+    background-color: #996515;
+}
+
+button.gold:focus{
+    background-color: #996515;
+}
+
+#login_div{
+    a{
+    color: #404040;
+    }
 }

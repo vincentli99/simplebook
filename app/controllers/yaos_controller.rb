@@ -1,5 +1,6 @@
 class YaosController < ApplicationController
     before_action :set_gua, only: [:new, :create, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
    
     def new
         @yao = Yao.new

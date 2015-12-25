@@ -3,11 +3,15 @@
     Vincent &copy; 2015  易經註解&copy;吳佩蓉
     </div>
     
-<!--
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center"><%= link_to "guas_admingua_path", '#', class: "btn btn-default" %></div>
-        </div>
-    </div>
--->
+ <div class="pull-right" id="login_div">
+    <% if user_signed_in? %>
+      <div class="alert alert-info">
+        Admin model
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: "Logout?" }, class: 'navbar-link'  %>
+      </div>
+      <% else %>
+      <%= link_to "Login", new_user_session_path, class: 'navbar-link'  %>
+    <% end %>
+    
+    
 </footer>

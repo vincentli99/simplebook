@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'guas#home'
   get 'guas/home', to: 'guas#home'
   # get 'guas/admingua', to: 'guas#admingua'

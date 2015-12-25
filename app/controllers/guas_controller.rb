@@ -1,49 +1,16 @@
 class GuasController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     
     def index
         @guas = Gua.order("guas.serial ASC").all
-        @pluckgua = Gua.find_by(id: shuffle_gua)
-        @pluckgua_name = @pluckgua.name
-        @pluckyao = Yao.find_by(id: shuffle_yao)
-        @pluckyao_name = @pluckyao.name
-        @pluckyao_ytext = @pluckyao.ytext
-        @pluckyao_gua = @pluckyao.gua
-        @pluckyao_explain = @pluckyao.explain
     end
     
     def home
-        @guas = Gua.order("guas.serial ASC").all
-        @pluckgua = Gua.find_by(id: shuffle_gua)
-        @pluckgua_name = @pluckgua.name
         @pluckyao = Yao.find_by(id: shuffle_yao)
         @pluckyao_name = @pluckyao.name
         @pluckyao_ytext = @pluckyao.ytext
         @pluckyao_gua = @pluckyao.gua
         @pluckyao_explain = @pluckyao.explain
-    end
-    
-    def admingua
-        @guas = Gua.order("guas.serial ASC").all
-        @pluckgua = Gua.find_by(id: shuffle_gua)
-        @pluckgua_name = @pluckgua.name
-        @pluckyao = Yao.find_by(id: shuffle_yao)
-        @pluckyao_name = @pluckyao.name
-        @pluckyao_ytext = @pluckyao.ytext
-        @pluckyao_gua = @pluckyao.gua
-        @pluckyao_explain = @pluckyao.explain
-    end
-    
-    def adminyao
-        @guas = Gua.order("guas.serial ASC").all
-        @pluckgua = Gua.find_by(id: shuffle_gua)
-        @pluckgua_name = @pluckgua.name
-        @pluckyao = Yao.find_by(id: shuffle_yao)
-        @pluckyao_name = @pluckyao.name
-        @pluckyao_ytext = @pluckyao.ytext
-        @pluckyao_gua = @pluckyao.gua
-        @pluckyao_explain = @pluckyao.explain
-        @gua = Gua.find(params[:id])
-        @gua_yaos = @gua.yaos.order('yaos.serial DESC').all
     end
     
     def new
@@ -84,8 +51,6 @@ class GuasController < ApplicationController
         flash[:success] = "Gua deleted successfully!"
         redirect_to guas_path
     end
-    
-
     
     private
     def gua_params

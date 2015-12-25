@@ -1,26 +1,41 @@
 <div class="container">
+    <% if user_signed_in? %>
     <div class="row">
         <div class="col-md-12">
-    <p><%= link_to '新增卦', new_gua_path, class:'btn btn-primary' %></p>
+        <%= link_to '新增卦', new_gua_path, class:'btn btn-primary' %>
         </div>
     </div>
+    <% end %>
     
     <% @guas.each do |gua| %>
         <div class="row">
-            <div class="col-md-4">
-                第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
-            </div>
-            <div class="col-md-4">
-                <%= gua.gtext %>
-            </div>
-            <div class="col-md-4">
-                <%= link_to edit_gua_path(gua), class:'btn btn-default' do %>
-                  <i class='glyphicon glyphicon-pencil'></i>
-                <% end %>
-                <%= link_to gua, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
-                    <i class='glyphicon glyphicon-trash'></i>
-                <% end %>
-            </div>
+            <% if user_signed_in? %>
+                
+                    <div class="col-md-4">
+                        第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
+                    </div>
+                    <div class="col-md-4">
+                        <%= gua.gtext %>
+                    </div>
+                    <div class="col-md-4">
+                    <%= link_to edit_gua_path(gua), class:'btn btn-default' do %>
+                      <i class='glyphicon glyphicon-pencil'></i>
+                    <% end %>
+                    <%= link_to gua, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
+                        <i class='glyphicon glyphicon-trash'></i>
+                    <% end %>
+                    </div>
+            <% else %>
+                    <div class="col-md-4">
+                        第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
+                    </div>
+                    <div class="col-md-8">
+                        <%= gua.gtext %>
+                    </div>
+                    
+            
+            <% end %>
+            
         </div>
         <hr>
     <% end %>
