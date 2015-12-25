@@ -22,6 +22,30 @@ class GuasController < ApplicationController
         @pluckyao_explain = @pluckyao.explain
     end
     
+    def admingua
+        @guas = Gua.order("guas.serial ASC").all
+        @pluckgua = Gua.find_by(id: shuffle_gua)
+        @pluckgua_name = @pluckgua.name
+        @pluckyao = Yao.find_by(id: shuffle_yao)
+        @pluckyao_name = @pluckyao.name
+        @pluckyao_ytext = @pluckyao.ytext
+        @pluckyao_gua = @pluckyao.gua
+        @pluckyao_explain = @pluckyao.explain
+    end
+    
+    def adminyao
+        @guas = Gua.order("guas.serial ASC").all
+        @pluckgua = Gua.find_by(id: shuffle_gua)
+        @pluckgua_name = @pluckgua.name
+        @pluckyao = Yao.find_by(id: shuffle_yao)
+        @pluckyao_name = @pluckyao.name
+        @pluckyao_ytext = @pluckyao.ytext
+        @pluckyao_gua = @pluckyao.gua
+        @pluckyao_explain = @pluckyao.explain
+        @gua = Gua.find(params[:id])
+        @gua_yaos = @gua.yaos.order('yaos.serial DESC').all
+    end
+    
     def new
         @gua = Gua.new
     end

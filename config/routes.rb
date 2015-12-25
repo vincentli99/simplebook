@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'guas#home'
   get 'guas/home', to: 'guas#home'
+  # get 'guas/admingua', to: 'guas#admingua'
+  # get 'guas/adminyao', to: 'guas#adminyao'
   resources :guas do
     resources :yaos
   end
