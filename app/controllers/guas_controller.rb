@@ -54,7 +54,7 @@ class GuasController < ApplicationController
     
     private
     def gua_params
-        params.require(:gua).permit(:name, :gtext, :explain, :serial)
+        params.require(:gua).permit(:name, :gtext, :explain, :explain2, :serial)
     end
     
     def shuffle_gua

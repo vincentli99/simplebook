@@ -25,7 +25,7 @@ p {
     margin-right:0px;
     margin-top:0px;
     margin-bottom:0px;
-    height: 300px;
+    height: 200px;
     width:100%;
     left: 0;
     right: 0;
@@ -35,11 +35,11 @@ p {
     .logo {
         background-color:rgba(0, 0, 0, 0.6);
         text-align: center;
-        margin-top: 80px;
+        margin-top: 70px;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         font-size: 1.5em;
         width: 100%;
         a {
@@ -98,6 +98,8 @@ footer {
 .gold{
     background-color: #D4AF37;
     border: none;
+    width: 300px;
+    height: 100px;
 }
 
 button.gold:hover{
@@ -120,4 +122,14 @@ button.gold:focus{
     a{
     color: #404040;
     }
+}
+
+/* media */
+@media(max-width:500px){
+ .jumbotron {
+     height:100px;
+     .logo{
+         margin-top:20px;
+     }
+ }   
 }

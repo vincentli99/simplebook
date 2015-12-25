@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151225030737) do
+ActiveRecord::Schema.define(version: 20151225101648) do
 
   create_table "guas", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20151225030737) do
     t.integer  "serial"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "explain2"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20151225030737) do
     t.integer "serial"
     t.integer "gua_id"
     t.boolean "yingyang"
+    t.text    "explain2"
   end
 
   add_index "yaos", ["gua_id"], name: "index_yaos_on_gua_id"

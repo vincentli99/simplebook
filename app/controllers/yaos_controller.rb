@@ -44,7 +44,7 @@ class YaosController < ApplicationController
     
     private
     def params_yao
-        params.require(:yao).permit(:name, :ytext, :serial, :gua_id, :yingyang, :explain)
+        params.require(:yao).permit(:name, :ytext, :serial, :gua_id, :yingyang, :explain, :explain2)
     end
     
     def set_gua

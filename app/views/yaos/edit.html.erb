@@ -9,6 +9,11 @@
             <%= f.text_field :serial, class:'form-control' %>
         </div>
         <div class="form-group">
+            <%= f.label '陰/陽爻' %>
+            <%= f.radio_button :yingyang, true %>陽
+            <%= f.radio_button :yingyang, false %>陰
+        </div>
+        <div class="form-group">
             <%= f.label '爻辭' %>
             <%= f.text_area :ytext, class: 'form-control', rows: 5 %>
         </div>
@@ -17,9 +22,8 @@
             <%= f.text_area :explain, class: 'form-control', rows: 5 %>
         </div>
         <div class="form-group">
-            <%= f.label '陰/陽爻' %>
-            <%= f.radio_button :yingyang, true %>陽
-            <%= f.radio_button :yingyang, false %>陰
+            <%= f.label '創業解釋' %>
+            <%= f.text_area :explain2, class:'form-control', rows:5 %>
         </div>
             <%= f.submit 'Update', class: 'btn btn-primary' %>
     <% end %>
