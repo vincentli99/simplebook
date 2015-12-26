@@ -13,6 +13,10 @@ class GuasController < ApplicationController
         @pluckyao_explain = @pluckyao.explain
     end
     
+    def guaorder
+        @guas = Gua.order("guas.serial ASC").all
+    end
+    
     def new
         @gua = Gua.new
     end

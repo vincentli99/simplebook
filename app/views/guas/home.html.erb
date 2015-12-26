@@ -22,7 +22,9 @@
         <% else %>
         <p><%= link_to @pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
         <% end %>
-        <h3>解釋：</h3>
+        <h2 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; Vincent Li">創業解釋</h2>
+        <p><%= @pluckyao_explain2 %></p>
+        <h2 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h2>
         <p><%= @pluckyao_explain %></p>
         </div>
     </div>
