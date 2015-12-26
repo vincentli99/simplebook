@@ -10,6 +10,7 @@
     <p><%= @gua.explain2 %></p>
     <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h3>
     <p><%= @gua.explain %></p>
+    <%= image_tag(@gua.image.url, class: "img-responsive", size:"500x500") if @gua.image? %>
 </div>
 
 <hr>

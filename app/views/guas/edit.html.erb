@@ -20,6 +20,13 @@
             <%= f.label '創業解釋' %>
             <%= f.text_area :explain2, class:'form-control', rows:5 %>
         </div>
+        <div class="thumbnail">
+            <%= image_tag(@gua.image.url)%>
+        </div>
+        <span class="picture">
+            <%= f.file_field :image, accept: 'image/jpg, image/png, image/gif'%>
+        </span>
+        <br>
             <%= f.submit 'Update', class:'btn btn-primary' %>
     <% end %>
 </div>

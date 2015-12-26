@@ -1,5 +1,5 @@
 <div class="well">
-    <%= form_for(@gua) do |f| %>
+    <%= form_for(@gua, html: { multipart: true }) do |f| %>
         <div class="form-group">
             <%= f.label '卦名' %>
             <%= f.text_field :name, class:'form-control' %>
@@ -20,6 +20,10 @@
             <%= f.label '創業解釋' %>
             <%= f.text_area :explain2, class:'form-control', rows:5 %>
         </div>
+        <span class="picture">
+            <%= f.file_field :image, accept: 'image/jpg, image/png, image/gif' %>
+        </span>
+        <br>
             <%= f.submit 'Create', class:'btn btn-primary' %>
     <% end %>
 </div>

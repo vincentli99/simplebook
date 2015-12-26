@@ -15,6 +15,7 @@ class GuasController < ApplicationController
     
     def guaorder
         @guas = Gua.order("guas.serial ASC").all
+        @gua1 = Gua.find_by(serial: 1)
     end
     
     def new
@@ -58,7 +59,7 @@ class GuasController < ApplicationController
     
     private
     def gua_params
-        params.require(:gua).permit(:name, :gtext, :explain, :explain2, :serial)
+        params.require(:gua).permit(:name, :gtext, :explain, :explain2, :serial, :image)
     end
     
     def shuffle_gua

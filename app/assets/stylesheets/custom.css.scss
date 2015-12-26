@@ -60,9 +60,14 @@ p {
     margin:0px;
 }
 
+.container-fluid{
+    width:100%;
+}
+
 .navbar{
     border-radius: 0;
     padding-top:4px;
+    height:100%;
     a {
         color: #D4AF37;
     }
@@ -106,14 +111,6 @@ button.gold:hover{
     background-color: #996515;
 }
 
-button.gold{
-    background-color: #996515;
-}
-
-button.gold:target{
-    background-color: #996515;
-}
-
 button.gold:focus{
     background-color: #996515;
 }
@@ -129,6 +126,8 @@ button.gold:focus{
 /* Carousel */
 #myCarousel {
 	margin-bottom:20px;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 #myCarousel .carousel-caption{
@@ -196,8 +195,14 @@ button.gold:focus{
 
 
 @media(max-width:991px){
-	.carousel-caption p, #myCarousel {
-		display:none;
+	.carousel-indicators{
+		display: none;
 	}
+	
+	#myCarousel {
+	margin-bottom:20px;
+	margin-left: 2%;
+	margin-right: 2%;
+}
 }
 
