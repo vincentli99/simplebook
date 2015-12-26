@@ -1,0 +1,39 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+        
+        <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+        
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <%= image_tag("sands.jpg", class: "img-responsive", height:"50px") %>
+            <div class="carousel-caption">
+              <h4><a href="post.html">Slide Story One</a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut vulputate ante, vitae finibus purus. Aenean sodales volutpat varius. Quisque accumsan, nisi ut rutrum vehicula, enim magna pretium magna.</p>
+            </div>
+          </div><!--Item end -->
+          
+          <div class="item">
+            <%= image_tag("prague-astronomical-clock.jpg", class: "img-responsive", height:"50px") %>
+            <div class="carousel-caption">
+              <h4><a href="post.html">Slide Story Two</a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut vulputate ante, vitae finibus purus. Aenean sodales volutpat varius. Quisque accumsan, nisi ut rutrum vehicula, enim magna pretium magna.</p>
+            </div>
+          </div><!--Item end -->
+        </div>
+        
+        <!-- Controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+  
+</div>

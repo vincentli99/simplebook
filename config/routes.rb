@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'guas#home'
   get 'guas/home', to: 'guas#home'
-  # get 'guas/admingua', to: 'guas#admingua'
+  get 'guas/guaorder', to: 'guas#guaorder'
   # get 'guas/adminyao', to: 'guas#adminyao'
   resources :guas do
     resources :yaos
