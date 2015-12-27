@@ -17,21 +17,24 @@
         <div class="well" id="guacontent">
         <h1>卜卦結果</h1>
         <h3>卦/爻辭：</h3>
-        <% if @pluckyao.serial > 0 %>
-        <p><%= link_to @pluckyao_gua.name+@pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
-        <% else %>
-        <p><%= link_to @pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
+        
+        <% if @pluckyao %>
+            <% if @pluckyao.serial > 0 %>
+            <p><%= link_to @pluckyao_gua.name+@pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
+            <% else %>
+            <p><%= link_to @pluckyao_name +'：'+ @pluckyao_ytext, gua_yao_path(@pluckyao_gua,@pluckyao)  %></p>
+            <% end %>
+            <% if @pluckyao_explain2 %>
+            <div>
+            <h2 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; Vincent Li">創業解釋</h2>
+            <p><%= @pluckyao_explain2 %></p>
+            </div>
+            <% end %>
+            <div>
+                <h2 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h2>
+                <p><%= @pluckyao_explain %></p>
+            </div>
         <% end %>
-        <% if @pluckyao_explain2 %>
-        <div>
-        <h2 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; Vincent Li">創業解釋</h2>
-        <p><%= @pluckyao_explain2 %></p>
-        </div>
-        <% end %>
-        <div>
-        <h2 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h2>
-        <p><%= @pluckyao_explain %></p>
-        </div>
         </div>
     </div>
 </div>
