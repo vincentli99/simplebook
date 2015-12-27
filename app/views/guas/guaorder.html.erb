@@ -1,13 +1,5 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
   
-        <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <% @guas.each_with_index do |gua, index| %>
-          <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= 'active' if index==0 %>"></li>
-      <% end %>
-    </ol>
-  
-        
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         
@@ -16,7 +8,7 @@
           <%= image_tag(gua.image.url, class:"img-responsive") %>
           <div class="carousel-caption">
             <h4>第<%= gua.serial %>卦 <%= link_to gua.name, gua_path(gua) %></h4>
-            <p><%= gua.explain2 %></p>
+              <p><%= gua.explain2 %></p>
           </div>
         </div><!--Item end -->
       <% end %>

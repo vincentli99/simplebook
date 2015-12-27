@@ -6,11 +6,19 @@
     <h3>卦辭</h3>
     <p><%= @gua.gtext %></p>
     <hr>
-    <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; Vincent Li">創業解釋</h3>
-    <p><%= @gua.explain2 %></p>
-    <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h3>
-    <p><%= @gua.explain %></p>
-    <%= image_tag(@gua.image.url, class: "img-responsive", size:"500x500") if @gua.image? %>
+    <% if @gua.explain2 %>
+    <div>
+        <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; Vincent Li">創業解釋</h3>
+        <p><%= @gua.explain2 %></p>
+    </div>
+    <% end %>
+    <div>
+        <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h3>
+        <p><%= @gua.explain %></p>
+    </div>
+    <div class="thumbnail">
+        <%= image_tag(@gua.image.url, class: "img-responsive") if @gua.image? %>
+    </div>
 </div>
 
 <hr>
