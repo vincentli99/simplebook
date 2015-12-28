@@ -26,7 +26,7 @@ class GuasController < ApplicationController
         @gua = Gua.new(gua_params)
         if @gua.save
             flash[:success] = 'Created gua successfully!'
-            redirect_to root_path
+            redirect_to guas_path
         else
             render 'new'
         end
