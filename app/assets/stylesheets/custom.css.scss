@@ -105,13 +105,14 @@ footer {
     border: none;
     width: 300px;
     height: 100px;
+    line-height: 80px;
 }
 
-button.gold:hover{
+button.gold:hover, a.gold:hover{
     background-color: #996515;
 }
 
-button.gold:focus{
+button.gold:focus, a.gold:focus{
     background-color: #996515;
 }
 
@@ -127,7 +128,6 @@ a.small {
 
 /** Carousal begin**/
 
-/* Carousel */
 #myCarousel {
 	margin-bottom:20px;
 	margin-left: 15%;
@@ -200,6 +200,21 @@ a.small {
  
  .table-title {
      display: none;
+ }
+ 
+ .carousel-caption p {
+     font-size: 13px;
+     line-height: 15px;
+ }
+ 
+ .carousel.slide{
+     width: 100%;
+ }
+ 
+ div#carousel{
+     width: 100%;
+     margin:0;
+     padding:0;
  }
 }
 

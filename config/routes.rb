@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'guas#home'
+  root 'guas#guaorder'
   get 'guas/home', to: 'guas#home'
   get 'guas/guaorder', to: 'guas#guaorder'
   get 'pages/about', to: 'pages#about'

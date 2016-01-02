@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row text-center">
-        <h1>創業中的你想聽點意見嗎？</h1>
+        <h1>創業中的你想卜個卦聽點意見嗎？</h1>
         <br>
         <div class="col-md-12">
         <button type="button" class="btn btn-primary btn-lg gold" id="reload">Step 1. 默想問題後點我</button>
         
         </div>
         <div class="col-md-12">
-        <button type="button" class="btn btn-primary btn-lg gold" id="tell">Step 2. 觀看結果</button>
+        <button type="button" class="btn btn-primary btn-lg gold" id="tell">Step 2. 觀看意見</button>
         </div>
         <br>
         
@@ -15,12 +15,12 @@
     <br>
     <div id="tellgua" >
         <div class="well" id="guacontent">
-        <h1>卜卦結果</h1>
+        <h1>意見</h1>
         
         <% if @pluckgua %>
             <% if @pluckgua.image? %>
                 <div class="thumbnail">
-                    <%= image_tag(@pluckgua.image.url, class: "img-responsive") %>
+                    <%= image_tag(@pluckgua.image.url, class: "img-responsive img-rounded") %>
                 </div>
             <% end %>
             <h3>卦/爻辭：</h3>
