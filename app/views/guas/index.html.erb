@@ -7,10 +7,43 @@
     </div>
     <% end %>
     
-    <% @guas.each do |gua| %>
-        <div class="row">
-            <% if user_signed_in? %>
+    <div class="row table-title">
+    <% if user_signed_in? %>
                 
+                    <div class="col-md-3">
+                        <strong>卦名</strong>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>創業解釋</strong>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>卦辭</strong>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>動作</strong>
+                    </div>
+         
+                
+    <% else %>
+             
+                    <div class="col-md-4">
+                        <strong>卦名</strong>
+                    </div>
+                    <div class="col-md-4">
+                        <strong>創業解釋</strong>
+                    </div>
+                    <div class="col-md-4">
+                        <strong>卦辭</strong>
+                    </div>
+                
+                
+    <% end %>
+    </div>
+    <hr>
+    <% @guas.each do |gua| %>
+        
+            <% if user_signed_in? %>
+                <div class="row">
                     <div class="col-md-3">
                         第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
                     </div>
@@ -28,7 +61,9 @@
                         <i class='glyphicon glyphicon-trash'></i>
                     <% end %>
                     </div>
+                </div>
             <% else %>
+                <div class="row">
                     <div class="col-md-4">
                         第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
                     </div>
@@ -38,11 +73,11 @@
                     <div class="col-md-4">
                         <%= gua.gtext %>
                     </div>
-                    
+                </div>
             
-            <% end %>
+    <% end %>
             
-        </div>
+        
         <hr>
     <% end %>
 </div>

@@ -19,11 +19,39 @@
     <div class="thumbnail">
         <%= image_tag(@gua.image.url, class: "img-responsive") if @gua.image? %>
     </div>
+    <small><%= link_to '圖片來源', @gua.image_source, target: '_blank' %></small>
 </div>
 
-<hr>
+
 <div class='container'>
-    
+    <div class="row table-title">
+        <div class="col-md-2">
+            <strong>爻</strong>
+        </div>
+        <div class="col-md-1">
+            <strong>陰陽</strong>
+        </div>
+        
+        <% if user_signed_in? %>
+            <div class="col-md-3">
+                <strong>爻辭</strong>
+            </div>
+            <div class="col-md-4">
+                <strong>通用解釋</strong>
+            </div>
+            <div class="col-md-2">
+                <strong>動作</strong>
+            </div>
+        <% else %>
+            <div class="col-md-4">
+                <strong>爻辭</strong>
+            </div>
+            <div class="col-md-5">
+                <strong>通用解釋</strong>
+            </div>
+        <% end %>
+    </div>
+    <hr>
     <%  @gua_yaos.each do |yao| %>
         <div class="row">
             <div class="col-md-2">

@@ -121,6 +121,10 @@ button.gold:focus{
     }
 }
 
+a.small {
+        color: #9E7902 !important;
+}
+
 /** Carousal begin**/
 
 /* Carousel */
@@ -142,6 +146,9 @@ button.gold:focus{
 
 #myCarousel .carousel-caption h4{
 	color:#fff;
+	a{
+	    color: #D4AF37;
+	}
 }
 
 #myCarousel .carousel-caption p{
@@ -189,7 +196,11 @@ button.gold:focus{
      .logo{
          margin-top:20px;
      }
- }   
+ }
+ 
+ .table-title {
+     display: none;
+ }
 }
 
 
@@ -203,6 +214,10 @@ button.gold:focus{
 	margin-bottom:20px;
 	margin-left: 2%;
 	margin-right: 2%;
-}
+ }
+
+     .table-title {
+     display: none;
+ }
 }
 

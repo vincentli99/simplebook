@@ -11,6 +11,11 @@ class GuasController < ApplicationController
         @pluckyao_ytext = @pluckyao.ytext
         @pluckyao_gua = @pluckyao.gua
         @pluckyao_explain = @pluckyao.explain
+        @pluckgua = Gua.find_by(id: shuffle_gua)
+        @pluckgua_name = @pluckgua.name
+        @pluckgua_gtext = @pluckgua.gtext
+        @pluckgua_explain = @pluckgua.explain
+        @pluckgua_explain2 = @pluckgua.explain2
     end
     
     def guaorder
@@ -59,7 +64,7 @@ class GuasController < ApplicationController
     
     private
     def gua_params
-        params.require(:gua).permit(:name, :gtext, :explain, :explain2, :serial, :image)
+        params.require(:gua).permit(:name, :gtext, :explain, :explain2, :serial, :image, :image_source)
     end
     
     def shuffle_gua

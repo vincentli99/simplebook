@@ -23,6 +23,10 @@
         <span class="picture">
             <%= f.file_field :image, accept: 'image/jpg, image/png, image/gif' %>
         </span>
+        <div class="form-group">
+            <%= f.label '圖片來源' %>
+            <%= f.text_field :image_source, class:'form-control' %>
+        </div>
         <br>
             <%= f.submit 'Create', class:'btn btn-primary' %>
     <% end %>
