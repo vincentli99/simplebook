@@ -1,9 +1,22 @@
-<nav class="navbar navbar-inverse">
-   <div class="container-fluid">
-        <ul class="nav nav-pills nav-justified">
-          <li><%= link_to '從易經看創業', guas_guaorder_path %></li>
-          <li><%= link_to '卜卦', guas_home_path %></li>
-          <li><%= link_to '瀏覽易經', guas_path %></li>
-        </ul>
-    </div>
+<nav class="navbar navbar-default">
+   <div class="container">
+        <div class="navbar-header">
+          <!--remove hamburger menu
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          -->
+          <%= link_to '易經與創業', root_path, class: "navbar-brand em-text" %>
+        </div>
+        <div id="navbar"><!--remove class "collapse navbar-collapse" from div#navbar-->
+          <ul class="nav navbar-nav">
+          
+            <li><%= link_to '瀏覽易經', guas_path %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+   
 </nav>

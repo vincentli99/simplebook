@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+$gold-color: #D4AF37;
+$deep-gray: #1b222a;
 
 html, body{
     margin: 0px;
@@ -17,20 +19,14 @@ p {
     line-height:2em;
 }
 
+
+
 .jumbotron {
-    position: relative;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-top:0px;
-    margin-bottom:0px;
-    height: 200px;
-    width:100%;
-    left: 0;
-    right: 0;
-    background: url('https://s3-ap-northeast-1.amazonaws.com/udemyherokuapp/uploads/yijing/prague-astronomical-clock-banner.jpg') no-repeat;
-    
+    background: url('https://s3-ap-northeast-1.amazonaws.com/udemyherokuapp/uploads/yijing/mountain-1031465_1920.jpg') no-repeat top center fixed;
+	color: #fff;
+	height:600px;
+    margin-bottom: 0;
+    border: none;
     
     .logo {
         background-color:rgba(0, 0, 0, 0.6);
@@ -50,41 +46,47 @@ p {
 } 
 
 
-.layer {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin:0px;
-}
-
-.container-fluid{
-    width:100%;
-}
 
 .navbar{
     border-radius: 0;
     padding-top:4px;
+    margin-bottom: 0;
     height:100%;
+    background: #1b222a;
+    border: none;
+
     a {
-        color: #D4AF37;
+        color: white;
     }
+    
+    a:hover{
+        color: $gold-color !important;
+    }
+    
+    .em-text{
+        color: $gold-color;
+    }
+    
+}
+
+.navbar-nav a {
+    color: white !important;
 }
 
 footer {
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 0;
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
     background-color: #404040;
     color: white;
+    border: none;
 }
 
 #tellgua{
     display: none;
+    margin-bottom: 0;
 }
 
 
@@ -113,7 +115,14 @@ button.gold:hover, a.gold:hover{
 }
 
 button.gold:focus, a.gold:focus{
-    background-color: #996515;
+    background: #996515;
+    outline: 0;
+}
+
+button.gold:active{
+    background: #996515 !important;
+    border: #996515 !important;
+    outline: 0 !important;
 }
 
 #login_div{
@@ -127,6 +136,10 @@ a.small {
 }
 
 /** Carousal begin**/
+
+#carousel {
+    margin-top:0px;
+}
 
 #myCarousel {
 	margin-bottom:20px;
@@ -192,7 +205,7 @@ a.small {
 /* media */
 @media(max-width:500px){
  .jumbotron {
-     height:100px;
+     height:500px;
      .logo{
          margin-top:20px;
      }

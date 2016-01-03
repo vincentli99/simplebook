@@ -9,20 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <%= render 'layouts/header' %>
+  
   <%= render 'layouts/nav' %>
+  <!--%= render 'layouts/header' %-->
   <%= render 'layouts/messages' %>
-  
-    <div class="container">
-      <div class="col-md-12">
-        <%= yield %>
-      </div>
-    </div>
-  </div>
-  
+  <%= yield %>
   <%= render 'layouts/footer' %>
   <% if Rails.env == 'production' %>
-  <%= render 'layouts/ga' %>
+    <%= render 'layouts/ga' %>
   <% end %>
 </body>
 </html>

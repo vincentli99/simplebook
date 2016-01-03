@@ -1,19 +1,21 @@
-<div class="row">
-    <% if @yao.serial > 0 %>
-    <h1>第<%= @yao.serial %>爻  <%= @yao.name %></h1>
-    <% else %>
-    <h1>卦名： <%= @yao.name %></h1>
-    <% end %>
-</div>
-
-<div class="well">
-    <% if @yao.serial > 0 %>
-    <h3>爻辭</h3>
-    <% else %>
-    <h3>卦辭</h3>
-    <% end %>
-    <p><%= simple_format(@yao.ytext) %></p>
-    <hr>
-    <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h3>
-    <p><%= simple_format(@yao.explain) %></p>
+<div class="container">
+    <div class="row">
+        <% if @yao.serial > 0 %>
+        <h1>第<%= @yao.serial %>爻  <%= @yao.name %></h1>
+        <% else %>
+        <h1>卦名： <%= @yao.name %></h1>
+        <% end %>
+    </div>
+    
+    <div class="well">
+        <% if @yao.serial > 0 %>
+        <h3>爻辭</h3>
+        <% else %>
+        <h3>卦辭</h3>
+        <% end %>
+        <p><%= simple_format(@yao.ytext) %></p>
+        <hr>
+        <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h3>
+        <p><%= simple_format(@yao.explain) %></p>
+    </div>
 </div>
