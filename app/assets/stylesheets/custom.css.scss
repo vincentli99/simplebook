@@ -24,9 +24,12 @@ p {
 .jumbotron {
     background: url('https://s3-ap-northeast-1.amazonaws.com/udemyherokuapp/uploads/yijing/mountain-1031465_1920.jpg') no-repeat top center fixed;
 	color: #fff;
-	height:650px;
+	height:635px;
+	margin-left: 0;
+	margin-right: 0;
     margin-bottom: 0;
     border: none;
+    width: 100%;
     
     .logo {
         background-color:rgba(0, 0, 0, 0.6);
