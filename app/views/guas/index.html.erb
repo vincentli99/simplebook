@@ -77,10 +77,10 @@
                         第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
                     </div>
                     <div class="col-md-3">
-                        <%= gua.explain2 %>
+                        <%= simple_format(gua.explain2) %>
                     </div>
                     <div class="col-md-3">
-                        <%= gua.gtext %>
+                        <%= simple_format(gua.gtext) %>
                     </div>
                     <div class="col-md-3">
                     <%= link_to edit_gua_path(gua), class:'btn btn-default' do %>
@@ -94,13 +94,13 @@
             <% else %>
                 <div class="row">
                     <div class="col-md-4">
-                        第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %> <%= gua.yaos.length %>爻 <span class="warn"><%= '未完成' if gua.yaos.length <7 %></span>
+                        第<%= gua.serial %>卦 - <%= link_to gua.name, gua_path(gua) %>
                     </div>
                     <div class="col-md-4">
-                        <%= gua.explain2 %>
+                        <%= simple_format(gua.explain2) %>
                     </div>
                     <div class="col-md-4">
-                        <%= gua.gtext %>
+                        <%= simple_format(gua.gtext) %>
                     </div>
                 </div>
             <% end %>

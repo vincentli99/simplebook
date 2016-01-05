@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'guas/guaorder', to: 'guas#guaorder'
   get 'pages/about', to: 'pages#about'
   # get 'guas/adminyao', to: 'guas#adminyao'
+  
   resources :guas do
     resources :yaos
   end

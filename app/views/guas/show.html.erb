@@ -6,16 +6,16 @@
 <div class="well">
     <h3>卦辭</h3>
     <p><%= @gua.gtext %></p>
-    <hr>
+    
     <% if @gua.explain2 %>
     <div>
         <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; Vincent Li">創業解釋</h3>
-        <p><%= @gua.explain2 %></p>
+        <p><%= simple_format(@gua.explain2) %></p>
     </div>
     <% end %>
     <div>
         <h3 class="btn btn-info" data-toggle="tooltip" data-placement="top" title="&copy; 吳佩蓉">通用解釋</h3>
-        <p><%= @gua.explain %></p>
+        <p><%= simple_format(@gua.explain) %></p>
     </div>
     <div class="thumbnail">
         <%= image_tag(@gua.image.url, class: "img-responsive") if @gua.image? %>
