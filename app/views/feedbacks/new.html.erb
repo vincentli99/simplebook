@@ -1,0 +1,15 @@
+<div class="container">    
+    <%= form_for @feedback, html: { class: 'form-inline' } do |f| %>
+    
+        <div class="form-group">
+          <%= f.label '意見' %>
+          <%= f.text_area :opinion, class: "form-control", placeholder: "歡迎回饋意見" %>
+        </div>
+        <div class="form-group">
+          <%= f.label 'Email' %>
+          <%= f.text_field :email, class: "form-control", placeholder: "若需要回覆，請填寫email" %>
+        </div>
+        <%= f.submit "送出", class: "btn btn-default" %>
+        
+    <% end %>
+</div>

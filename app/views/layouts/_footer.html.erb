@@ -1,21 +1,46 @@
 <footer>
     <div class="container">
-    Vincent Li &copy; 2015  <%= link_to '關於', pages_about_path %>
-    <br>
-    <a href="https://tw.linkedin.com/in/vincent-w-li-93981710"><i class="fa fa-linkedin"></i></a>&nbsp;
-    <a href="https://twitter.com/vincentli9"><i class="fa fa-twitter"></i></a>&nbsp;
-    <a href="https://www.facebook.com/weihsieh.li"><i class="fa fa-facebook"></i></a>
-    </div>
+      <div class="row">
+        <div class="col-md-6">
+        Vincent Li &copy; 2015  <%= link_to '關於', pages_about_path %>
+      <br>
+      <a href="https://tw.linkedin.com/in/vincent-w-li-93981710"><i class="fa fa-linkedin"></i></a>&nbsp;
+      <a href="https://twitter.com/vincentli9"><i class="fa fa-twitter"></i></a>&nbsp;
+      <a href="https://www.facebook.com/weihsieh.li"><i class="fa fa-facebook"></i></a>
     
- <div class="pull-right" id="login_div">
-    <% if user_signed_in? %>
-      <div>
-        Admin model
+    
+       <span id="login_div">
+        <% if user_signed_in? %>
+        
+        <small>Admin model</small>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: "Logout?" } %>
+        
+        <% else %>
+        <%= link_to "Login", new_user_session_path, class:'pull-right'  %>
+        <% end %>
+    
+        </span>
+        </div>
+        
+        <div class="col-md-6">
+          <%= form_for Feedback.new, html: { class: 'form-inline', remote: true } do |f| %>
+
+            <div class="form-group">
+              <%= f.label '意見', class: 'sr-only' %>
+              <%= f.text_area :opinion, class: "form-control", rows:'1', cols:'35', placeholder: "歡迎回饋意見" %>
+             
+            </div>
+            <div class="form-group">
+              <%= f.label 'Email', class: 'sr-only' %>
+              <%= f.text_field :email, class: "form-control", placeholder: "若需回覆請填email" %>
+            </div>
+            
+            <%= button_tag(type: 'submit', class: 'btn btn-default btn-feedback') do %>
+            送出
+            <% end %>
+            
+          <% end %>
+        </div>
       </div>
-      <% else %>
-      <%= link_to "Login", new_user_session_path  %>
-    <% end %>
-    
-    
+    </div>
 </footer>

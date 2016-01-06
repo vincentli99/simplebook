@@ -1,0 +1,46 @@
+<% content_for :title, "易經與創業 - 留言列表" %>
+<div class="container">
+    <div class="row">
+        <br>
+        <h1>留言列表</h1>
+        <br>
+                <div class="col-md-1">
+                    ID 
+                </div>
+                <div class="col-md-3">
+                    留言內容 
+                </div>
+                <div class="col-md-2">
+                    Email
+                </div>
+                <div class="col-md-3">
+                    留言時間（台北時間）
+                </div>
+                <div class="col-md-3">
+                    動作
+                </div>
+    </div>
+     <hr>
+            <% @feedbacks.each do |feedback| %>
+            <div class="row">
+                <div class="col-md-1">
+                    <%= feedback.id %> 
+                </div>
+                <div class="col-md-3">
+                    <%= simple_format(feedback.opinion) %> 
+                </div>
+                <div class="col-md-2">
+                    <%= feedback.email %>
+                </div>
+                <div class="col-md-3">
+                    <%= feedback.created_at.in_time_zone("Taipei").strftime("%Y/%m/%d %H:%M:%S") %>
+                </div>
+                <div class="col-md-3">
+                    <%= link_to feedback, method: :delete, data: { confirm: "確定刪除？" }, class: 'btn btn-default' do %>
+                        <i class='glyphicon glyphicon-trash'></i>
+                    <% end %>
+                </div>
+            </div>
+            <hr>
+            <% end %>
+</div>
