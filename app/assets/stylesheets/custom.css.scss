@@ -19,7 +19,13 @@ p {
     line-height:2em;
 }
 
+#about {
+    min-height: 650px;
+}
 
+#show-yao{
+    min-height: 650px;
+}
 
 .jumbotron {
     background: url('https://s3-ap-northeast-1.amazonaws.com/udemyherokuapp/uploads/yijing/mountain-1031465_1920.jpg') no-repeat top center fixed;
@@ -90,6 +96,7 @@ footer {
 #tellgua{
     display: none;
     margin-bottom: 0;
+    margin-top: 20px;
 }
 
 
@@ -133,6 +140,8 @@ button.gold:active{
     color: #404040;
     }
 }
+
+
 
 a.small {
         color: #9E7902 !important;

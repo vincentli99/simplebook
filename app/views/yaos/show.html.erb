@@ -1,6 +1,6 @@
-<% content_for :title, "易經與創業 - "+@yao.name+" "+@yao.ytext %>
+<% content_for :title, "創業與易經 - "+@yao.name+" "+@yao.ytext %>
 
-<div class="container">
+<div class="container" id="show-yao">
     <div class="row">
         <% if @yao.serial > 0 %>
         <h1>第<%= @yao.serial %>爻  <%= @yao.name %></h1>

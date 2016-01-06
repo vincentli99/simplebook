@@ -15,10 +15,11 @@
   <div id='notice'><!--notice id is for feedback message js-->
     <%= render 'layouts/messages' %>
   </div>
-  
-  <%= yield %>
 
-  <%= render 'layouts/footer' %>
+    <%= yield %>
+
+    <%= render 'layouts/footer' %>
+  
   <% if Rails.env == 'production' %>
     <%= render 'layouts/ga' %>
   <% end %>
